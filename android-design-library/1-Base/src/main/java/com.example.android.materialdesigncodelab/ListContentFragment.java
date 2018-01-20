@@ -18,7 +18,7 @@ import android.widget.TextView;
  * Created by Sofia on 1/20/2018.
  */
 
-public class ListContentFragment extends Fragment{
+public class ListContentFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class ListContentFragment extends Fragment{
         public ImageView avator;
         public TextView name;
         public TextView description;
+
         public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.item_list, parent, false));
             avator = (ImageView) itemView.findViewById(R.id.list_avatar);
@@ -51,6 +52,7 @@ public class ListContentFragment extends Fragment{
         private final String[] mPlaces;
         private final String[] mPlaceDesc;
         private final Drawable[] mPlaceAvators;
+
         public ContentAdapter(Context context) {
             Resources resources = context.getResources();
             mPlaces = resources.getStringArray(R.array.places);
