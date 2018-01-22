@@ -1,6 +1,7 @@
 package com.example.android.materialdesigncodelab;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import static com.example.android.materialdesigncodelab.DetailActivity.EXTRA_POSITION;
 
 /**
  * Created by Sofia on 1/20/2018.
@@ -43,6 +46,16 @@ public class TileContentFragment extends Fragment {
             super(inflater.inflate(R.layout.item_tile, parent, false));
             picture = (ImageView) itemView.findViewById(R.id.tile_picture);
             name = (TextView) itemView.findViewById(R.id.tile_title);
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, DetailActivity.class);
+                    intent.putExtra(EXTRA_POSITION, getAdapterPosition());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 
