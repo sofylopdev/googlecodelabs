@@ -1,2 +1,2 @@
-# googlecodelabs
+# Codelabs
 Codelabs done by sofia
